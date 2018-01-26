@@ -5,11 +5,14 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "nodemon --watch server server",
+    "json:server": "json-server --watch db/data.json"
   },
   "dependencies": {
     "express": "^4.16.2",
     "express-graphql": "^0.6.11",
-    "graphql": "^0.12.3"
+    "graphql": "^0.12.3",
+    "isomorphic-unfetch": "^2.0.0",
+    "json-server": "^0.12.1"
   },
   "devDependencies": {
     "@types/graphql": "^0.12.3",

@@ -7,13 +7,6 @@ const {
   GraphQLNonNull,
 } = require('graphql')
 
-// Hardcoded data
-const customers = [
-  { id: '1', name: 'John Doe', email: 'jdoe@gmail.com', age: 35 },
-  { id: '2', name: 'Steve Smith', email: 'steve@gmail.com', age: 25 },
-  { id: '3', name: 'Sara Williams', email: 'sara@gmail.com', age: 35 },
-]
-
 // Customer Type
 const CustomerType = new GraphQLObjectType({
   name: 'Customer',
@@ -26,6 +19,7 @@ const CustomerType = new GraphQLObjectType({
 })
 
 // Root Query
+const rest = require('./rest')
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',
   fields: {
@@ -35,13 +29,13 @@ const RootQueryType = new GraphQLObjectType({
         id: { type: GraphQLString },
       },
       resolve(parentValue, args) {
-        return customers.find(customer => customer.id === args.id)
+        return rest.get('customers', args.id)
       }
     },
     customers: {
       type: new GraphQLList(CustomerType),
       resolve(parentValue, args) {
-        return customers
+        return rest.get('customers')
       }
     }
   }
