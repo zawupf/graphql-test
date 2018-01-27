@@ -1,7 +1,8 @@
 {
   "name": "graphql-test",
+  "description": "A GraphQL sandbox",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "license": "MIT",
   "scripts": {
     "dev:server": "nodemon --watch server server",
