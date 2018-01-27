@@ -21,4 +21,4 @@ A GraphQL sandbox
 
 ## License
 
-MIT
+[MIT](./LICENSE)
