@@ -13,10 +13,10 @@ A GraphQL sandbox
 ## How to use
 
 * Install dependencies: `yarn`
-* Start database server: `yarn json:server`<br/>
-  Provides a simple REST api to the "database".
-* Start http server: `yarn dev:server`<br/>
-  Provide express based http server.
+* `yarn dev` -- this will:
+  * Start the database server which provides a simple REST api to the "database"
+  * Start the development http server which provides an express based http server with _graphql_ api.
+    (Automatically restarted on modifications by _nodemon_)
 
 
 ## License

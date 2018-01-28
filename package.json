@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "concurrently -n REST,HTTP \"npm run json:server\" \"npm run dev:server\"",
     "dev:server": "nodemon --watch server server",
     "json:server": "json-server --watch db/data.json"
   },
@@ -18,6 +19,7 @@
   "devDependencies": {
     "@types/graphql": "^0.12.3",
     "@types/node": "^9.4.0",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.14.11"
   }
 }
